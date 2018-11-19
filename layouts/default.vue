@@ -4,8 +4,6 @@ div
     .fixed-top
       nav-bar
 
-  welcome-banner
-
   modals-container 
 
   .container-fluid.main
@@ -14,6 +12,7 @@ div
 </template>
 
 <script>
+
 import NavBar from '@/components/NavBar'
 import WelcomeBanner from '@/components/WelcomeBanner.vue'
 //import MapalaMap from '@/components/MapalaMap'
@@ -38,7 +37,7 @@ export default {
 }
 
 .main {
-  margin-top: 60px;
+  margin-top: 95px;
 }
 
 .modal-wrapper {
@@ -67,4 +66,29 @@ export default {
   position: sticky;
   height: calc(100vh - 116px);
 }
+.centered{
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+
+  body {
+    overflow-y:scroll;
+  }
+
+  body::-webkit-scrollbar {
+    width: 0.5em;
+  }
+   
+  body::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+   
+  body::-webkit-scrollbar-thumb {
+    background-color: darkslategrey;
+    outline: 1px solid slategrey;
+  }
+
 </style>

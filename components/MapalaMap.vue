@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  gmap-autocomplete(@place_changed="setCenter"
+  //gmap-autocomplete(@place_changed="setCenter"
                     :selectFirstOnEnter="true"
                     placeholder="Поиск локации").vue-map-search.form-control#search
   gmap-map(
@@ -33,7 +33,7 @@ div
       :key="marker.name",
       :position="marker.coords",
       :clickable="true",
-      :draggable="false",
+      :draggable="true",
       :icon="marker.icon"
       @click="$router.push({name: 'account', params: { account: marker.name }})"
       @mouseover="openInfoWindow(marker, 'account')",
@@ -63,10 +63,10 @@ import GmapCluster from 'vue2-google-maps/dist/components/cluster'
 export default {
   data() {
     return {
-      zoom: 4,
+      zoom: 6,
       center: {
-        lat: 40.748817,
-        lng: -73.985428
+        lat: -7.336642,
+        lng: 112.657583
       },
 
       infoWindow: {
@@ -94,22 +94,22 @@ export default {
   async created() {
     let client = this.$apolloProvider.defaultClient
 
-    let { data } = await client.query({query: ACCOUNT_MARKERS_QUERY})
+    //let { data } = await client.query({query: ACCOUNT_MARKERS_QUERY})
 
-    this.account_markers = data.accounts.edges.map(e => {
-      e = e.node
+    // this.account_markers = data.accounts.edges.map(e => {
+    //   e = e.node
 
-      let avatar = e.meta.profile.profileImage || 'https://thumb.ibb.co/bHPoQz/icon_profile.png'
-      return {
-        name: e.name,
-        coords: {
-          lat: e.meta.mapalaProfile.location.geometry.coordinates[0],
-          lng: e.meta.mapalaProfile.location.geometry.coordinates[1]
-        },
+    //   let avatar = e.meta.profile.profileImage || 'https://thumb.ibb.co/bHPoQz/icon_profile.png'
+    //   return {
+    //     name: e.name,
+    //     coords: {
+    //       lat: e.meta.mapalaProfile.location.geometry.coordinates[0],
+    //       lng: e.meta.mapalaProfile.location.geometry.coordinates[1]
+    //     },
 
-        icon: 'https://imgp.golos.io/32x32/' + avatar
-      }
-    })
+    //     icon: 'https://imgp.golos.io/32x32/' + avatar
+    //   }
+    // })
   },
 
   computed: {
@@ -165,17 +165,17 @@ export default {
     async updateMarkers() {
       const map = this.$refs.mmm.$mapObject
       const bounds = map.getBounds()
-
+      console.log("bounds", bounds)
       //const boundingBox = [[bounds.b.b, bounds.f.b], [bounds.b.f, bounds.f.f]]
       const boundingBox = [
-        //bounds.getSouthWest().lng(),
-        //bounds.getSouthWest().lat(),
-        //bounds.getNorthEast().lng(),
-        //bounds.getNorthEast().lat(),
-        bounds.b.b,
-        bounds.f.b,
-        bounds.b.f,
-        bounds.f.f,
+        bounds.getSouthWest().lng(),
+        bounds.getSouthWest().lat(),
+        bounds.getNorthEast().lng(),
+        bounds.getNorthEast().lat(),
+        // bounds.b.b,
+        // bounds.f.b,
+        // bounds.b.f,
+        // bounds.f.f,
       ].join()
 
       this.fetch_markers(boundingBox)

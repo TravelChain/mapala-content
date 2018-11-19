@@ -1,12 +1,12 @@
 <template lang="pug">
 .row
   .col(v-loading="loading").loading
-    post(v-if="post" :post="post")
+    post(v-if="post" :post="post").postcontent
     not-found(v-if="notFound").mt-5
 
     // TODO Сделать стрелки
     //a(v-if="true" class="next_post") sadf
-    //a(v-if="true" class="prev_post") adf
+    //a(v-if="true" class="prev_post") Back
 </template>
 
 <script>
@@ -63,27 +63,8 @@ export default {
 .loading {
   min-height: 300px;
 }
-
-  .prev_post {
-    width: 70px;
-    height: 70px;
-    position: fixed;
-    top: 48%;
-    left: calc((100% - 866px)/2 - 130px);
-    z-index: 102;
-    /* background: url('~/assets/icon-prev.svg') no-repeat; */
-    cursor: pointer;
+  .postcontent{
+    padding: 0px 20px;
   }
 
-  .next_post {
-    /* background: url('~/assets/icon-prev.svg') no-repeat; */
-    transform: rotateZ(180deg);
-    width: 70px;
-    height: 70px;
-    position: fixed;
-    cursor: pointer;
-    z-index: 102;
-    top: 48%;
-    right: calc((100% - 866px)/2 - 130px);
-  }
 </style>

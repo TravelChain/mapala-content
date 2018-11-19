@@ -1,14 +1,16 @@
 <template lang="pug">
 .bottom-block
-  a(v-if="$device.isDesktop" @click="open_modal").icon.comment {{ post.children }}
-  nuxt-link(v-else :to="{name: 'post', params: {author: post.author.name, permlink: post.permlink}}").icon.comment {{ post.children }}
+  //a(v-if="$device.isDesktop" @click="open_modal").icon.comment {{ post.children }}
+  //nuxt-link(v-else :to="{name: 'post', params: {author: post.author.name, permlink: post.permlink}}").icon.comment {{ post.children }}
 
-  a.icon.repost(@click="share()") Поделиться
+  //a.icon.repost(@click="share()") _
 
-  nuxt-link(v-if="$device.isDesktop && $route.name != 'post'"
-            :to="{name: 'post', params: {author: post.author.name, permlink: post.permlink}}").icon.widthout-text
-    i.fa.fa-eye
+  el-button(@click="share()" plain type="warning" size="small" icon="el-icon-view") Поделиться
 
+  router-link(:to="{name: 'post', params: {author: post.author.name, permlink: post.permlink}}")
+    el-button(v-if="$device.isDesktop && $route.name != 'post'" plain type="success" size="small" icon="el-icon-view" :to="{name: 'post', params: {author: post.author.name, permlink: post.permlink}}") Просмотреть
+
+  
   upvote-button(:post="post")
 
   no-ssr
@@ -49,13 +51,13 @@ export default {
 
 <style>
 .bottom-block {
-  justify-content: space-between;
-  padding: 0 17px;
-  margin-bottom: 10px;
-  display: flex;
+  padding-left: 17px;
+  padding-right: 17px;
+  padding-bottom: 8px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  text-align: center;
 }
 
 .copy-clickboard {

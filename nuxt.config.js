@@ -5,7 +5,7 @@ const golos_mongo_url = 'mongodb://mapala:mapala@golos-mongo.mapala.net:27017/Go
 module.exports = {
   env: {
     PROD: process.env.PROD || false,
-    API_QL_URL: process.env.API_QL_URL || 'http://localhost:5000/graphql',
+    API_QL_URL: process.env.API_QL_URL || 'https://golos-ql.mapala.net/',
     BACKEND_API: process.env.BACKEND_API || 'http://127.0.0.1:8000/api/',
     SENTRY_DSN: process.env.SENTRY_DSN || null,
     // TODO Поменять везде базовый урл

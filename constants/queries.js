@@ -128,16 +128,22 @@ query posts ($after: String,
              $isVoted: String,
              $authorized: Boolean!,
              $tags: [String],
-             $app: String)
+             $app: String,
+             $orderby: PostOrderingEnum 
+             )
 {
   posts(after: $after,
         first: $first,
         category: $category,
+        orderBy: $orderby,
         author: $author,
         meta: {
           tags: $tags,
           app: $app
-        })
+        },
+
+      ),
+
   {
     edges {
       node {

@@ -98,28 +98,7 @@ export default {
     width: 100%;
     height: 400px;
   }
-  .prev_post {
-    width: 70px;
-    height: 70px;
-    position: fixed;
-    top: 48%;
-    left: calc((100% - 866px)/2 - 130px);
-    z-index: 102;
-    /* background: url('~/assets/icon-prev.svg') no-repeat; */
-    cursor: pointer;
-  }
 
-  .next_post {
-    /* background: url('~/assets/icon-prev.svg') no-repeat; */
-    transform: rotateZ(180deg);
-    width: 70px;
-    height: 70px;
-    position: fixed;
-    cursor: pointer;
-    z-index: 102;
-    top: 48%;
-    right: calc((100% - 866px)/2 - 130px);
-  }
   .post-content .edit {
     font: 700 14px/36px 'PT Sans';
     box-sizing: border-box;

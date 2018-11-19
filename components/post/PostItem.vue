@@ -142,10 +142,10 @@ export default {
   border-radius: 6px;
   background-color: #fff;
   -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
-  box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
-  border: 1px solid rgba(72,84,101,.2);
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  
 }
 
 .post-item a {
@@ -168,13 +168,11 @@ export default {
 }
 
 .post-item.w_i .short{
-  margin: -80px 12px 25px;
-  border-radius: 6px;
+  margin: -80px 0px 25px;
   background: #ffffff;
-  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.33);
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.23);
   position: relative;
   z-index: 1;
-  padding-bottom: 10px;
 }
 
 .post-modal {

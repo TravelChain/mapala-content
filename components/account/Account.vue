@@ -90,7 +90,6 @@ export default {
 
 <style>
 .user-data {
-  padding: 15px;
 }
 
 .edit-button {
@@ -101,11 +100,11 @@ export default {
 
   .pf {
     border-radius: 6px;
-    background-color: #fafafa;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-    border: solid 1px rgba(72, 84, 101, 0.2);
-    box-sizing: border-box;
-    max-width: 494px;
+    // background-color: #fafafa;
+    // box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    // border: solid 1px rgba(72, 84, 101, 0.2);
+    // box-sizing: border-box;
+    //max-width: 494px;
     width: 100%;
     margin-bottom: 20px;
   }
@@ -119,14 +118,14 @@ export default {
   .pf .head_img{
     width: 100%;
     min-width: 100%;
-    background-position: 50% 50%;
+    // background-position: 50% 50%;
 
-    background-color: #6d9ee1;
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-color: #6d9ee1;
+    // background-repeat: no-repeat;
+    // background-size: cover;
     background-position: center;
     width: 100%;
-    min-height: 160px;
+    min-height: 100px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
 

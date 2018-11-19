@@ -1,6 +1,6 @@
 <template lang="pug">
 .row
-  .col-md-4
+  .col-md-10.centered.col-lg-10.col-xl-6.col-sm-12
     no-ssr
       create-post-button(v-if="this.$store.getters['auth/isAuth']")
 
@@ -16,11 +16,11 @@
         el-radio-button(label='New York')
         el-radio-button(label='Washington')
 
-
+    info-buttons.fullwidth
     feed
-  .col.right-fixed-container(v-if="$device.isDesktop")
-    no-ssr
-      mapala-map#map
+  // .col.right-fixed-container(v-if="$device.isDesktop")
+  //   no-ssr
+  //     mapala-map#map
 </template>
 
 <style>
@@ -41,7 +41,9 @@
 <script>
 import Feed from '@/components/post/Feed'
 import CreatePostButton from '@/components/post/CreatePostButton'
-import MapalaMap from '@/components/MapalaMap'
+import InfoButtons from '@/components/post/InfoButtons'
+
+//import MapalaMap from '@/components/MapalaMap'
 
 
 export default {
@@ -56,8 +58,15 @@ export default {
   components: {
     Feed,
     CreatePostButton,
-    MapalaMap
+//    MapalaMap,
+    InfoButtons
   },
 }
 
 </script>
+<style>
+.centered{
+   margin-left: auto;
+    margin-right: auto;
+}
+</style>

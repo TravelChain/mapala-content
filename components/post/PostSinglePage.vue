@@ -1,8 +1,11 @@
 <template lang="pug">
 .row
   .container
+    el-button(type="primary" size="small" class="btnback" round plain icon="el-icon-back" v-on:click ="$router.go(-1)").prev_post
     post(:post="post")
 
+    
+    
 </template>
 
 <script>
@@ -37,3 +40,20 @@ export default {
 }
 
 </script>
+
+<style>
+  .prev_post {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10000;
+    /* background: url('~/assets/icon-prev.svg') no-repeat; */
+    cursor: pointer;
+                color: white !important;
+            background: #506a8c !important;
+  }
+  .btn_back{
+
+  }
+
+</style>

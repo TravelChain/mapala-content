@@ -1,11 +1,12 @@
 <template lang="pug">
 .row
-  .col-md-4
+  .col-md-6.centered.col-lg-6.col-xl-6.col-sm-12
     account(:account="account")
     feed
-  .col.right-fixed-container(v-if="$device.isDesktop")
-    no-ssr
-      mapala-map#map
+  // .col.right-fixed-container(v-if="$device.isDesktop")
+  //   no-ssr
+  //     mapala-map#map
+  el-button(type="primary" size="small" round plain icon="el-icon-back" v-on:click ="$router.go(-1)").prev_post
 
 </template>
 
@@ -13,13 +14,13 @@
 import Feed from '~/components/post/Feed'
 import Account from '~/components/account/Account.vue'
 import { ACCOUNT_QUERY } from '~/constants/queries.js'
-import MapalaMap from '@/components/MapalaMap'
+//import MapalaMap from '@/components/MapalaMap'
 
 export default {
   components: {
     Feed,
     Account,
-    MapalaMap
+//    MapalaMap
   },
 
   async fetch ({ app, store, commit, route }) {
@@ -47,6 +48,17 @@ export default {
 </script>
 
 <style>
+.prev_post {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10000;
+    /* background: url('~/assets/icon-prev.svg') no-repeat; */
+    cursor: pointer;
+    color: white !important;
+    background: #506a8c !important;
+  }
+  
 .card.hovercard {
     position: relative;
     padding-top: 0;

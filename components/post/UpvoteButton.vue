@@ -1,10 +1,10 @@
 <template lang="pug">
-  el-button(size="small" v-if="!isVoted", @click="vote", type="info" :loading="loading" icon="el-icon-arrow-up")
+  el-button(size="small" v-if="!isVoted", @click="vote", type="primary" plain :loading="loading" icon="el-icon-arrow-up")
     //round.mr-2
     //span.mr-2 Голосовать
     span {{ parseFloat(tpv || post.totalPendingPayout) | convertGBG }}₽
 
-  el-button.upvote-btn(v-else, size="small" type="primary" icon="el-icon-check").voted
+  el-button.upvote-btn(v-else, size="small" type="success" plain icon="el-icon-check").voted
     //round.mr-2
     //span.ml-2 Проголосовано
     // TODO тут сделать фильтрацию по разрым валютам в зависимости от настроек

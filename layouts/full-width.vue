@@ -32,7 +32,7 @@ export default {
 
 <style>
 #top {
-  margin-top: 60px;
+  margin-top: 95px;
 }
 
 .modal-wrapper {

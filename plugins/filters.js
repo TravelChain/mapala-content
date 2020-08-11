@@ -46,7 +46,7 @@ Vue.filter('golos_html', (value = '') => {
 })
 
 Vue.filter('golos_proxy', (value, size) => {
-  return `${config.img_proxy_prefix}${size}/${value}`
+  return `${value}`
 })
 
 

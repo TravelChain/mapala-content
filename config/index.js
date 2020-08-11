@@ -7,12 +7,12 @@ export default {
   app: 'mapala/1.1',
   app_tags: app_tags, // Posting to first tag
   tag_for_post: app_tags[0],
-  pagination: 10,
+  pagination: 20,
 
-  img_proxy_prefix: 'https://imgp.golos.io/',
-  API_QL_URL: process.env.API_QL_URL || 'http://127.0.0.1:5000/graphql',
+  img_proxy_prefix: '',
+  API_QL_URL: process.env.API_QL_URL || 'https://core-ql.mapala.net/',
 
-  baseURI: 'https://golos.mapala.net/',
+  baseURI: 'https://mapala.net/',
 }
 
 export const map_options = {

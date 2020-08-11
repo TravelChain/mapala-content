@@ -4,7 +4,7 @@ div
     .fixed-top
       nav-bar
 
-  welcome-banner
+  // <!-- welcome-banner -->
 
   modals-container 
 
@@ -15,7 +15,7 @@ div
 
 <script>
 import NavBar from '@/components/NavBar'
-import WelcomeBanner from '@/components/WelcomeBanner.vue'
+// import WelcomeBanner from '@/components/WelcomeBanner.vue'
 //import MapalaMap from '@/components/MapalaMap'
 
 export default {
@@ -26,7 +26,7 @@ export default {
   },
   components: {
     NavBar,
-    WelcomeBanner,
+    // WelcomeBanner,
     //MapalaMap
   }
 }

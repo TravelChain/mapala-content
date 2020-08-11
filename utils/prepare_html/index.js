@@ -180,7 +180,7 @@ function proxifyImages(doc) {
     Array.from(doc.getElementsByTagName('img')).forEach(node => {
         const url = node.getAttribute('src')
         if(! linksRe.local.test(url))
-            node.setAttribute('src', $STM_Config.img_proxy_prefix + '0x0/' + url)
+            node.setAttribute('src', url)
     })
 }
 

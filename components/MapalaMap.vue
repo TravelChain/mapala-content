@@ -107,7 +107,7 @@ export default {
           lng: e.meta.mapalaProfile.location.geometry.coordinates[1]
         },
 
-        icon: 'https://imgp.golos.io/32x32/' + avatar
+        icon: avatar
       }
     })
   },

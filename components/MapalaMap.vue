@@ -107,7 +107,7 @@ export default {
           lng: e.meta.mapalaProfile.location.geometry.coordinates[1]
         },
 
-        icon: avatar
+        icon: ""
       }
     })
   },

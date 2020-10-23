@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
   web:
     restart: always
@@ -11,4 +11,4 @@ services:
         BASE_URL: ${BASE_URL}
     command: yarn run start
     ports:
-      - 127.0.0.1:8888:3000
+      - 127.0.0.1:3000:3000

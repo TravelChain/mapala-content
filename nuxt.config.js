@@ -1,6 +1,6 @@
 const path = require('path')
 const MongoClient = require('mongodb').MongoClient
-const golos_mongo_url = 'mongodb://mapala:mapala@135.181.81.1:27017:27017/Golos'
+const golos_mongo_url = 'mongodb://mapala:mapala@135.181.87.246:27017/Golos'
 
 module.exports = {
   env: {
